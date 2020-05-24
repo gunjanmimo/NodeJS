@@ -1,6 +1,6 @@
 const request = require("request")
-
-const url = 'http://api.openweathermap.org/data/2.5/weather?q=Jaipur&&lang=es&appid=a005b7cecf27b814bdc36b3d86d01f63&units=metric'
+const address='delhi'
+const url = 'http://api.openweathermap.org/data/2.5/weather?q='+encodeURIComponent(address)+'&&lang=es&appid=a005b7cecf27b814bdc36b3d86d01f63&units=metric'
 request({ url: url, json: true }, (err, response) => {
   if(err){
     console.log("Enable to connect weather service")
@@ -9,8 +9,9 @@ request({ url: url, json: true }, (err, response) => {
   }
   else{
     const data=response.body;
-    console.log(data.main.temp+" C")
+    console.log("Current temp @ "+address+" "+data.main.temp+" C")
   }
 
 })
+
 
