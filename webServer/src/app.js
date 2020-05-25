@@ -37,6 +37,15 @@ app.get('/help', (req, res) => {
         owner: "gunjan paul"
     })
 })
+app.get('/help/*',(req,res)=>{
+    res.send("Airtcle not found")
+})
+app.get('*',(req,res)=>{
+    res.render('404',{
+        title: "404 error"
+    })
+})
+
 app.listen(3000, () => {
     console.log("Server is running on port: 3000")
 })
