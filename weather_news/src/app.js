@@ -2,6 +2,8 @@ const express = require("express")
 const hbs = require('hbs')
 const path = require('path')
 const chalk = require('chalk');
+const request = require('request')
+const weather = require("./weather.js")
 const app = express()
 
 // path declearation 
@@ -34,13 +36,38 @@ app.get('/contact', (req, res) => {
     })
 })
 
+
 app.get('/weather', (req, res) => {
-    res.render('weather', {
+    if (!req.query.address) {
+        return res.render('weather', {
+            title: "Weather",
+            discription: "Something Wrong with Weather service",
+
+        })
+    }
+
+    
+    
+    weather.getTemp(req.query.address,(data)=>{
+        res.render('weather', {
         title: "Weather",
-        discription: "Current Weather ",
-        
+        location: req.query.address,
+        temp: data,
+
+    })
     })
 })
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: "404",
+        discription: "Something Wrong"
+    })
+})
+
+
+
+
 console.log("To access: http://localhost:3000/")
 app.listen(3000, () => {
     console.log(chalk.bold.blue("Server is running on port: 3000"))
