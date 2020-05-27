@@ -1,5 +1,5 @@
 const request = require('request')
-const address='jaipur'
+
 //const url = 'http://api.openweathermap.org/data/2.5/weather?q='+encodeURIComponent(address)+'&&lang=es&appid=a005b7cecf27b814bdc36b3d86d01f63&units=metric'
 
 

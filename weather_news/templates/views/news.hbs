@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        {{title}}
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    {{>header}}
+
+    <div class="newsCard">
+        <h1 style="word-wrap: break-word;">{{newsTitle}}</h1>
+        <h2>Author: <span style="color: blue;">{{author}}</span></h2>
+        <h2>Date: <span style="color: blue;">{{publishedAt}}</span></h2>
+        <img src="{{urlToImage}}" alt="" style="border-radius: 10px;">
+        <h3 style="word-wrap: break-word;">{{description}}</h3>
+
+    </div>
+
+    {{>footer}}
+</body>
+
+</html>

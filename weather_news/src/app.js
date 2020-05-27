@@ -4,6 +4,7 @@ const path = require('path')
 const chalk = require('chalk');
 const request = require('request')
 const weather = require("./weather.js")
+const newsInfo= require("./news.js")
 const app = express()
 
 // path declearation 
@@ -45,18 +46,32 @@ app.get('/weather', (req, res) => {
 
         })
     }
-
-    
-    
-    weather.getTemp(req.query.address,(data)=>{
+    weather.getTemp(req.query.address, (data) => {
         res.render('weather', {
-        title: "Weather",
-        location: req.query.address,
-        temp: data,
+            title: "Weather",
+            location: req.query.address,
+            temp: data,
 
-    })
+        })
     })
 })
+app.get('/news',(req,res)=>{
+    newsInfo.getNews((data)=>{
+        res.render('news',{
+            title: "News",
+            author: data.author,
+            newsTitle: data.title,
+            description: data.description,
+            urlToImage: data.urlToImage,
+            publishedAt: data.publishedAt,
+            content: data.content
+        })
+    })
+    
+})
+
+
+
 
 app.get('*', (req, res) => {
     res.render('404', {
