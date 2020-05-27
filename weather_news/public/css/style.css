@@ -1,0 +1,31 @@
+a {
+    text-decoration: none;
+    color: rgba(0, 68, 255, 0.637);
+}
+body {
+    padding-left: 20%;
+    padding-top: 10%;
+}
+th {
+    padding-right: 10px;
+}
+#card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 10px;
+}
+#card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+#footerText{
+    padding-top: 40px;
+    color: rgb(77, 77, 77);
+    font-family: cursive;
+
+}
+#footerText span{
+    font-weight: 700;
+    color: red;
+}
