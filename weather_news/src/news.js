@@ -1,9 +1,13 @@
 const request = require('request')
 const moment = require('moment')
 const currentDate = moment().utc().format('Y-M-D')
+const location = require('../public/js/app.js')
 exports.getNews=(callback)=>{
+    location.getLocation((data)=>{
+        const locData=data
+    })
     
-    const url= 'http://newsapi.org/v2/everything?q=bitcoin&from='+encodeURIComponent(currentDate)+'&sortBy=publishedAt&apiKey=fe0771a2c1a6435f9cc27bd41bf2109f'
+    const url= 'http://newsapi.org/v2/everything?q=bitcoin&from='+encodeURIComponent(locData)+'&sortBy=publishedAt&apiKey=fe0771a2c1a6435f9cc27bd41bf2109f'
     setTimeout(() => {
         request({url: url, json:true},(err,res)=>{
             if(err){
