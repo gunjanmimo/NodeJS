@@ -28,8 +28,12 @@ app.get('', (req, res) => {
     weather.getTemp(req.query.address, (data) => {
         res.render('index', {
             title: "Weather",
-            location: req.query.address,
-            temp: data,
+            location: data.location,
+            temp: data.temp+ " C",
+            condition: data.condition,
+            humidity: data.humidity,
+            windSpeed: data.windSpeed
+
 
         })
     })

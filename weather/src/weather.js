@@ -14,15 +14,13 @@ exports.getTemp=(address,callback)=>{
             }
             else{
               const data=response.body;
-              // callback(data.main.temp+" C")
-              if(data.main.temp>30){
-                callback("🥵 "+data.main.temp+" C")
-              } else if(data.main.temp<20){
-                            callback("🥶 "+data.main.temp+" C")
-                        }
-                        else {
-                            callback("🌞 "+data.main.temp+" C")
-                        }
+              callback({
+                location:address,
+                temp: data.main.temp,
+                condition: data.weather[0].main,
+                humidity:data.main.humidity,
+                windSpeed: data.wind.speed,
+              })
             }
           
           })

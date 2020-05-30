@@ -3,6 +3,10 @@
 <head>
     <link rel="stylesheet" href="/css/style.css">
     <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -12,11 +16,15 @@
         <button>Search</button>
         <br>
     </form>
-    <div style="padding-top: 20px;">
+    <div style="padding-top: 20px;" class="weatherCard">
 
-        <h1 id="message-1">location: <span>{{location}}</span></h1>
-        <h1 id="message-2">{{temp}}</h1>
+        <h1>location: <span id="message-1">{{location}}</span></h1>
+        <h1>Temperature: <span id="message-2">{{temp}}</span></h1>
+        <h1>Condition: <span id="message-3">{{condition}}</span></h1>
+        <h1>Humidity: <span id="message-4">{{humidity}}</span></h1>
+        <h1>Wind Speed: <span id="message-5">{{windSpeed}}</span></h1>
     </div>
+    <!----weather card------->
     {{>footer}}
     <script src="/js/app.js"></script>
 
