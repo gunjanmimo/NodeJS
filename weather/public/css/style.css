@@ -1,0 +1,39 @@
+a {
+    text-decoration: none;
+    font-size: 34px;
+    padding-right: 15px;
+}
+body {
+    padding-left: 20%;
+    padding-top: 10%;
+}
+
+/*search bar*/
+input[type="text"] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 40%;
+    background: #f1f1f1;
+    border-radius: 10px;
+    
+}
+button {
+    float: left;
+    width: 10%;
+    padding: 10px;
+    background: #2196f3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+form {
+    padding-top: 20px;
+    margin-top: 30px;
+    padding-right: 20px;
+}
