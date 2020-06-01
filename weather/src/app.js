@@ -3,7 +3,7 @@ const path = require('path')
 const hbs = require('hbs')
 const weather = require('./weather.js')
 const app = express()
-
+const port = process.env.PORT || 3000
 
 // path declearation 
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -48,7 +48,7 @@ app.get('*', (req, res) => {
     })
 })
 
-console.log("http://localhost:3000/")
-app.listen(3000, () => {
-    console.log("server is running on port: 3000")
+
+app.listen(port, () => {
+    console.log("http://localhost:"+port)
 })
