@@ -14,3 +14,14 @@ const User = mongoose.model('User', {
         type: Number
     }
 })
+
+const me = new User({
+    name: "Gunjan Paul",
+    age: 20
+})
+
+me.save().then((result) => {
+    console.log(result)
+}).catch((error) => {
+    console.log(error)
+})
