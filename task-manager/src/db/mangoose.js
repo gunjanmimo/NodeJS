@@ -20,8 +20,8 @@ const me = new User({
     age: 20
 })
 
-me.save().then((result) => {
-    console.log(result)
+me.save().then(() => {
+    console.log(me)
 }).catch((error) => {
     console.log(error)
 })
