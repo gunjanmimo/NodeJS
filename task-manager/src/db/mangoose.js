@@ -38,12 +38,21 @@ me.save().then(() => {
 //     }
 // })
 
-// const myTask = new Task({
-//     taskName: "OS STUDY",
-//     completed: false
-// })
-// myTask.save().then(() => {
-//     console.log(myTask)
-// }).catch((error) => {
-//     console.log(error)
-// })
+const myTask = new Task({
+    taskName: "OS STUDY",
+    completed: true
+}, {
+    taskName: "PUBG",
+    completed: false
+}, {
+    taskName: "Yoga",
+    completed: true
+}, {
+    taskName: "meditation",
+    completed: true
+})
+myTask.save().then(() => {
+    console.log(myTask)
+}).catch((error) => {
+    console.log(error)
+})
