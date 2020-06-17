@@ -69,12 +69,21 @@ const Task = mongoose.model('Task', {
     }
 })
 
-const task = new Task({
+const task1 = new Task({
     description: '  Eat lunch'
 })
+const task2 = new Task({
+    description: '  palying game'
+})
 
-task.save().then(() => {
-    console.log(task)
+task1.save().then(() => {
+    console.log(task1)
+}).catch((error) => {
+    console.log(error)
+})
+
+task2.save().then(() => {
+    console.log(task2)
 }).catch((error) => {
     console.log(error)
 })
