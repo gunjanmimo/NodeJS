@@ -1,3 +1,3 @@
 git add -A 
 git commit -m "new"
-git push --forcewithlease=master
+git push --force-with-lease=master
