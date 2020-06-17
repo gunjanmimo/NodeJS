@@ -20,8 +20,30 @@ const me = new User({
     age: 20
 })
 
+
+
 me.save().then(() => {
     console.log(me)
 }).catch((error) => {
     console.log(error)
 })
+
+
+// const Task = mongoose.model('Task', {
+//     taskName: {
+//         type: String
+//     },
+//     completed: {
+//         type: Boolean
+//     }
+// })
+
+// const myTask = new Task({
+//     taskName: "OS STUDY",
+//     completed: false
+// })
+// myTask.save().then(() => {
+//     console.log(myTask)
+// }).catch((error) => {
+//     console.log(error)
+// })
