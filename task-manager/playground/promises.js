@@ -21,13 +21,22 @@ const add = (a, b) => {
     })
 }
 
-add(23, 34).then((sum) => {
+// add(23, 34).then((sum) => {
+//     console.log(sum)
+//     add(sum, 5).then((sum2) => {
+//         console.log(sum2)
+//     }).catch((e) => {
+//         console.log(e)
+//     })
+// }).catch((error) => {
+//     console.log(error)
+// })
+
+add(1, 1).then((sum) => {
     console.log(sum)
-    add(sum, 5).then((sum2) => {
-        console.log(sum2)
-    }).catch((e) => {
-        console.log(e)
-    })
+    return add(sum, 34)
+}).then((sum2) => {
+    console.log(sum2)
 }).catch((error) => {
     console.log(error)
 })
