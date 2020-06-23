@@ -1,5 +1,5 @@
 require('../src/db/mangoose')
-const User = require("../src/models/user")
+const User= require("../src/models/user")
 
 //5ee9c5738275dddfdc0a6bab
 
