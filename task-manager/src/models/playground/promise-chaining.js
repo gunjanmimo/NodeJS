@@ -7,7 +7,7 @@ User.findByIdAndUpdate('5ee9c5738275dddfdc0a6bab', {
     age: 98
 }).then((user) => {
     console.log(user)
-    return User.countDocuments({ age: 20 })
+    return User.countDocuments({ age: 0 })
 }).then((result) => {
     console.log(result)
 }).catch((error) => {
