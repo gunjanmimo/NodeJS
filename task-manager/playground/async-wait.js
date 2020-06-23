@@ -1,6 +1,10 @@
 const doWork = async () => {
-
-    return "Gunjan"
+    throw new Error("went wrong")
+    // return "Gunjan"
 }
 
-console.log(doWork())
+doWork().then((result) => {
+    console.log("result: " + result)
+}).catch((e) => {
+    console.log(e)
+})
