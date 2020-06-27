@@ -10,24 +10,39 @@ const port = process.env.PORT || 3000
 
 
 app.use(express.json())
-//creating resounces
-app.post("/users", (req, res) => {
-    const user = new User(req.body)
-    user.save().then(() => {
-        res.status(201).send(user)
-    }).catch((error) => {
-        res.status(400).send(error)
+//creating resources
+app.post("/users", async (req, res) => {
 
-    })
+    const user = new User(req.body)
+
+    try {
+        await user.save()
+        res.status(201).send(user)
+    } catch (e) {
+        res.status(400).send(e)
+    }
+
+    // user.save().then(() => {
+    //     res.status(201).send(user)
+    // }).catch((error) => {
+    //     res.status(400).send(error)
+
+    // })
 })
 
 
-app.get("/users", (req, res) => {
-    User.find({}).then((user) => {
+app.get("/users", async (req, res) => {
+    try {
+        const user = await User.find({})
         res.send(user)
-    }).catch((error) => {
+    } catch (e) {
         res.status(500).send()
-    })
+    }
+    // User.find({}).then((user) => {
+    //     res.send(user)
+    // }).catch((error) => {
+    //     res.status(500).send()
+    // })
 })
 
 app.get("/users/:id", (req, res) => {
@@ -79,6 +94,6 @@ app.get('/tasks/:id', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log("srver is runnning on port: ", port)
+    console.log("server is running on port: ", port)
     console.log("http://localhost:" + port)
 })
