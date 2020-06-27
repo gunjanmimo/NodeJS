@@ -10,3 +10,8 @@ Task.findByIdAndRemove('5ee623603938377b57c90e88').then((task) => {
 }).catch((e) => {
     console.log(e)
 })
+
+
+const updateAgeAndCount = async (id, age) => {
+    const user = await Task.findByIdAndUpdate()
+}
