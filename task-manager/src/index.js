@@ -8,6 +8,9 @@ const myFunction = async () => {
     const hashedPassword = await bcrypt.hash(password, 8)
     console.log("pasword: " + password)
     console.log("hashwd password: " + hashedPassword)
+
+    const isMatch = await bcrypt.compare("RedHat123#@", hashedPassword)
+    console.log(isMatch)
 }
 myFunction()
 
