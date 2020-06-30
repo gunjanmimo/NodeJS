@@ -1,7 +1,7 @@
 const express = require("express")
 require("./db/mangoose")
 const User = require("./models/user")
-const Task = require("./models/tasks")
+const Task = require("./models/task")
 const bcrypt = require("bcryptjs")
 // const myFunction = async () => {
 //     const password = "RedHat123#@"
@@ -76,10 +76,10 @@ app.get("/users/:id", async (req, res) => {
     //     res.status(500).send()
     // })
 })
-app.patch('/users/:id',async(req,res)=>{
-    try{
+app.patch('/users/:id', async (req, res) => {
+    try {
 
-    }catch(e){
+    } catch (e) {
 
     }
 })
